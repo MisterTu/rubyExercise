@@ -8,7 +8,7 @@ class Person
   end
 
   def hobbies
-  	@hobbies.split(",")
+  	@hobbies.split(", ")
   end
 
   def hash
