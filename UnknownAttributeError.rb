@@ -1,0 +1,3 @@
+class UnknownAttributeError < Exception
+
+end

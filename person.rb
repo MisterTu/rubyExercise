@@ -1,10 +1,16 @@
+require "./UnknownAttributeError"
+
 class Person
   attr_accessor :name, :hobbies
 
   def initialize(params = {})
-  	@name = params[:name]
-  	@hobbies = params[:hobbies]
-
+  	if params.length == 2
+  		@name = params[:name]
+  		@hobbies = params[:hobbies]
+  	elsif params.length > 2
+  		raise UnknownAttributeError.new()
+  	end
+  	
   end
 
   def hobbies
