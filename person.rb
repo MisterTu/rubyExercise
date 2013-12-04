@@ -17,7 +17,8 @@ class Person
   	@hobbies.split(",")
   end
 
-  def hash
+  def commonHobbies(p2)
+  	foo = hobbies & p2.hobbies
 
   end
 
