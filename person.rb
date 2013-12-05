@@ -18,19 +18,17 @@ class Person
 
   def commonHobbies(p2)
   	foo = hobbies & p2.hobbies
-  	# foo.join(",")
-  	# foo.to_a
   end
 
   def friendslist(a)
-  	# hobbiesArray = []
-  	# a.map { |p| hobbiesArray += hobbies & p.hobbies}
-  	# hobbiesArray
-
-  	hobbiesArray = a.permutation(2).to_a
-  	gh = hobbiesArray.map {|p| p.first.commonHobbies(p.last)}
-  	cd = gh.reject { |h|  h.empty? }
-
+    returnArray = []
+    a.combination(2){ |p|
+      foo = p[0].commonHobbies(p[1])
+      if foo.length > 0
+        returnArray.push([foo.length, foo.join(", "), p[0].name, p[1].name])
+      end
+    }
+    returnArray
   end
 
 end
